@@ -38,7 +38,7 @@
 </head>
 <body>
 
-    <h1>Hello! Welcome to My Assignment</h1>
+    <h1>Hello! Welcome to muqaddas assignment</h1>
 
     <!-- 3. Inline style method -->
     <p style="color: red; font-size: 16px;">This paragraph uses inline styling.</p>
