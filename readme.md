@@ -198,10 +198,14 @@ p {
 ```
 ## Q8: What are CSS Pseudo-classes and Pseudo-elements?
 ### Points Covered
- * **Does ::before add a real HTML element?** No, it does not add a real tag to the HTML file. It just creates a virtual element through CSS.
- * **What CSS property is required for ::before/::after to appear?** The **content** property is required. Even if it is empty like content: "";, you must write it.
- * **:nth-child(2n) selects which elements?** It selects all the **even** items (like 2nd, 4th, 6th, etc.).
- * **How would you style every 3rd list item?** By writing **:nth-child(3n)**.
+ * **Does ::before add a real HTML element?**
+ *  No, it does not add a real tag to the HTML file. It just creates a virtual element through CSS.
+ * **What CSS property is required for ::before/::after to appear?**
+ *  The **content** property is required. Even if it is empty like content: "";, you must write it.
+ * **:nth-child(2n) selects which elements?**
+ *  It selects all the **even** items (like 2nd, 4th, 6th, etc.).
+ * **How would you style every 3rd list item?**
+ *  By writing **:nth-child(3n)**.
 ### Code Task
 ```css
 /* 1. Change button to red on hover */
