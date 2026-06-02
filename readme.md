@@ -1,18 +1,22 @@
+
 # CSS Theory Assignment
 
 ## Q1: What is CSS and how do you add it to an HTML page?
 
 ### Points Covered
-* **What does CSS stand for?** CSS stands for **Cascading Style Sheets**.
+* **What does CSS stand for?**
+  <br>CSS stands for **Cascading Style Sheets**.
   
-* **What problem does CSS solve?** HTML was only made to build the basic structure of a webpage. Without CSS, developers had to use tags like `<font>` or add colors to every single element manually. This made the code very messy and hard to change. CSS solves this by separating the content (HTML) from the style and design.
+* **What problem does CSS solve?**
+  <br>HTML was only made to build the basic structure of a webpage. Without CSS, developers had to add colors to every single element manually. This made the code very messy and hard to change. CSS solves this by separating the content from the design.
 
 * **Three methods of adding CSS:**
-  1. **Inline CSS:** Adding style inside the HTML tag using the `style` attribute.
-  2. **Internal CSS:** Writing styles inside a `<style>` tag in the `<head>` section of the HTML file.
-  3. **External CSS:** Putting all styles in a separate `.css` file and linking it with the `<link>` tag.
+  <br>1. **Inline CSS:** Adding style inside the HTML tag using the `style` attribute.
+  <br>2. **Internal CSS:** Writing styles inside a `<style>` tag in the `<head>` section.
+  <br>3. **External CSS:** Putting styles in a separate `.css` file and linking it with the `<link>` tag.
 
-* **Why External CSS is preferred over Inline CSS:** External CSS keeps the HTML code clean and short. If you want to change the color or font of the whole website, you only have to change one file instead of updating every single page. It also makes the website load faster.
+* **Why External CSS is preferred over Inline CSS:**
+  <br>External CSS keeps the HTML code clean. If you want to change the design of the whole website, you only change one file instead of updating every page. It also makes the website load faster.
 
 ### Code Task
 ```html
@@ -21,8 +25,10 @@
 <head>
     <meta charset="UTF-8">
     <title>My CSS Assignment</title>
+    <!-- 1. External link method -->
     <link rel="stylesheet" href="style.css">
 
+    <!-- 2. Internal style method -->
     <style>
         h1 {
             color: blue;
@@ -34,6 +40,7 @@
 
     <h1>Hello! Welcome to My Assignment</h1>
 
+    <!-- 3. Inline style method -->
     <p style="color: red; font-size: 16px;">This paragraph uses inline styling.</p>
 
 </body>
@@ -42,10 +49,18 @@
 ```
 ## Q2: Explain CSS Selectors with examples.
 ### Points Covered
- * **Which selector has the highest specificity — class or ID?** The **ID selector** has higher specificity than a class selector. If you apply both to the same element, the ID style will win.
- * **How do you target an element that is a direct child vs any descendant?** For a direct child, we use the **>** sign (like div > p). For any descendant (grandchild or deeper), we just leave a **space** (like div p).
- * **Can you use the same class on multiple elements?** Yes, you can use the same class name on as many elements as you want.
- * **Can you use the same ID on multiple elements?** No, an ID must be unique. You can only use it once on a page.
+ * **Which selector has the highest specificity — class or ID?**
+   
+   The **ID selector** has higher specificity than a class selector. If you apply both to the same element, the ID style wins.
+ * **How do you target an element that is a direct child vs any descendant?**
+   
+   For a direct child, we use the **>** sign (like div > p). For any descendant, we just leave a **space** (like div p).
+ * **Can you use the same class on multiple elements?**
+   
+   Yes, you can use the same class name on as many elements as you want.
+ * **Can you use the same ID on multiple elements?**
+   
+   No, an ID must be completely unique. You can only use it once on a page.
 ### Code Task
 ```css
 /* 1. Universal Selector (Applies to everything) */
@@ -87,10 +102,18 @@ section > p {
 ```
 ## Q3: What is the CSS Box Model? Explain each layer.
 ### Points Covered
- * **Which layer is the innermost?** The **Content** layer is the innermost part (where text or images live).
- * **Padding is inside or outside the border?** Padding is **inside** the border. It adds space between the content and the border.
- * **What does margin: 0 auto do to a block element?** It sets the top/bottom margin to 0 and automatically divides the left/right margin equally. This **centers** the block element horizontally on the screen.
- * **With border-box, does width include padding?** Yes, when you use box-sizing: border-box, the padding and border are included inside the total width you set.
+ * **Which layer is the innermost?**
+   
+   The **Content** layer is the absolute innermost part where text or images live.
+ * **Padding is inside or outside the border?**
+   
+   Padding is **inside** the border. It adds space between the content and the border.
+ * **What does margin: 0 auto do to a block element?**
+   
+   It sets the top/bottom margin to 0 and automatically divides the left/right margin equally. This **centers** the block element horizontally.
+ * **With border-box, does width include padding?**
+   
+   Yes, when you use box-sizing: border-box, the padding and border are included inside the total width.
 ### Code Task
 ```css
 .box {
@@ -104,10 +127,18 @@ section > p {
 ```
 ## Q4: Explain CSS Colors. What are the different ways to define a color?
 ### Points Covered
- * **Which format is most commonly used by developers?** **HEX codes** and **RGB/RGBA** are the most common formats developers use every day.
- * **What does the 'A' in RGBA stand for?** The 'A' stands for **Alpha**, which controls the transparency (from 0.0 for invisible to 1.0 for solid color).
- * **Does opacity affect child elements?** Yes, if you use opacity: 0.5 on a parent div, everything inside it (text, buttons, images) will also become blurry/see-through.
- * **Does rgba affect child elements?** No, rgba() only makes the background or text color transparent. The items inside will stay completely solid.
+ * **Which format is most commonly used by developers?**
+   
+   **HEX codes** and **RGB/RGBA** are the most common formats developers use every day.
+ * **What does the 'A' in RGBA stand for?**
+   
+   The 'A' stands for **Alpha**, which controls the transparency from 0.0 to 1.0.
+ * **Does opacity affect child elements?**
+   
+   Yes, if you use opacity: 0.5 on a parent div, everything inside it also becomes see-through.
+ * **Does rgba affect child elements?**
+   
+   No, rgba() only makes the background or text color transparent. Child items stay solid.
 ### Code Task
 ```css
 /* Writing the same Red color in 5 different ways */
@@ -120,10 +151,18 @@ section > p {
 ```
 ## Q5: What are CSS Units? Explain px, %, rem, em, vh, and vw.
 ### Points Covered
- * **What is 1rem equal to by default?** By default, 1rem is equal to **16px** (standard browser size).
- * **% is relative to the parent or the root?** Percentage (%) is always relative to its **parent** element.
- * **vh stands for what?** vh stands for **Viewport Height** (1vh means 1% of the screen's height).
- * **Why is rem better than px for font-size in accessibility?** If a user changes their browser text size because of weak eyesight, rem will automatically grow or shrink. Fixed px stays the same and can break the view for them.
+ * **What is 1rem equal to by default?**
+   
+   By default, 1rem is equal to **16px**.
+ * **% is relative to the parent or the root?**
+   
+   Percentage (%) is always relative to its immediate **parent** element.
+ * **vh stands for what?**
+   
+   vh stands for **Viewport Height** (1vh means 1% of the screen's height).
+ * **Why is rem better than px for font-size in accessibility?**
+   
+   If a user changes their browser text size due to weak eyesight, rem will automatically scale. Fixed px stays the same and breaks layout accessibility.
 ### Code Task
 ```css
 .hero-section {
@@ -137,10 +176,18 @@ section > p {
 ```
 ## Q6: What is CSS Specificity and how does the Cascade work?
 ### Points Covered
- * **Which has higher specificity — a class or an element selector?** A **class selector** wins over a basic HTML element/tag selector because it has higher specificity.
- * **What specificity score does an inline style have?** Inline style has the highest local power, scored as **(1, 0, 0, 0)**.
- * **If two rules have equal specificity, which one wins?** The rule written **at the bottom (last)** in the CSS file will win.
- * **What does !important override?** It overrides everything—inline styles, IDs, classes, and tags.
+ * **Which has higher specificity — a class or an element selector?**
+   
+   A **class selector** wins over a basic HTML element selector because it has higher specificity.
+ * **What specificity score does an inline style have?**
+   
+   Inline style has the highest priority, scored as **(1, 0, 0, 0)**.
+ * **If two rules have equal specificity, which one wins?**
+   
+   The rule written **at the bottom (last)** in the CSS file will win.
+ * **What does !important override?**
+   
+   It overrides everything—inline styles, IDs, classes, and tags.
 ### Code Task
 ```css
 /* HTML: <p id='intro' class='text'>Hello</p> */
@@ -163,10 +210,18 @@ p {
 ```
 ## Q7: Explain CSS Flexbox. How does it differ from block layout?
 ### Points Covered
- * **What is the difference between justify-content and align-items?** justify-content moves items horizontally (main axis), while align-items moves items vertically (cross axis).
- * **What does flex: 1 do to an item?** It tells the item to grow and take up all the leftover empty space inside the container.
- * **How do you center an element both horizontally and vertically with Flexbox?** Give the parent display: flex, then add justify-content: center and align-items: center.
- * **What does flex-wrap: wrap do?** If there is no space left on the row, flex-wrap: wrap automatically pushes the extra items to the next line instead of breaking the layout.
+ * **What is the difference between justify-content and align-items?**
+   
+   justify-content moves items horizontally, while align-items moves items vertically inside a flex row.
+ * **What does flex: 1 do to an item?**
+   
+   It tells the item to grow and take up all the leftover empty space inside the container.
+ * **How do you center an element both horizontally and vertically with Flexbox?**
+   
+   Give the parent display: flex, then add justify-content: center and align-items: center.
+ * **What does flex-wrap: wrap do?**
+   
+   If there is no space left on the row, it automatically pushes the extra items to the next line.
 ### Code Task
 ```html
 <nav class="my-navbar">
@@ -197,10 +252,18 @@ p {
 ```
 ## Q8: What are CSS Pseudo-classes and Pseudo-elements?
 ### Points Covered
- * **Does ::before add a real HTML element?** No, it does not add a real tag to the HTML file. It just creates a virtual element through CSS.
- * **What CSS property is required for ::before/::after to appear?** The **content** property is required. Even if it is empty like content: "";, you must write it.
- * **:nth-child(2n) selects which elements?** It selects all the **even** items (like 2nd, 4th, 6th, etc.).
- * **How would you style every 3rd list item?** By writing **:nth-child(3n)**.
+ * **Does ::before add a real HTML element?**
+   
+   No, it does not add a real tag to the HTML code. It just creates a virtual element through CSS.
+ * **What CSS property is required for ::before/::after to appear?**
+   
+   The **content** property is strictly required. Even if it is empty like content: "";.
+ * **:nth-child(2n) selects which elements?**
+   
+   It selects all the **even** sibling items (like 2nd, 4th, 6th, etc.).
+ * **How would you style every 3rd list item?**
+   
+   By writing the **:nth-child(3n)** selector.
 ### Code Task
 ```css
 /* 1. Change button to red on hover */
@@ -222,10 +285,18 @@ input::placeholder {
 ```
 ## Q9: Explain CSS Transitions and Animations.
 ### Points Covered
- * **A transition needs a trigger — what are common triggers?** Common triggers are actions like **:hover** (mouse over) or **:focus** (clicking inside an input).
- * **Can you have multiple transitions on one element?** Yes, you can add commas to transition multiple properties (like transition: width 0.3s, color 0.2s).
- * **What does animation-iteration-count: infinite do?** It makes the animation loop **forever** without stopping.
- * **Why is animating transform faster than animating width?** transform is handled by the graphics card (GPU) and doesn't force the browser to recalculate the page layout. Changing width makes the browser re-render the whole layout, which can slow down the site.
+ * **A transition needs a trigger — what are common triggers?**
+   
+   Common triggers are user actions like **:hover** or **:focus**.
+ * **Can you have multiple transitions on one element?**
+   
+   Yes, you can add commas to transition multiple properties together (like transition: width 0.3s, color 0.2s).
+ * **What does animation-iteration-count: infinite do?**
+   
+   It makes the keyframe animation loop **forever** without stopping.
+ * **Why is animating transform faster than animating width?**
+   
+   transform is handled by the GPU without causing a page layout recalculation. Changing width forces a slow layout redraw.
 ### Code Task
 ```css
 .cool-card {
@@ -262,10 +333,18 @@ input::placeholder {
 ```
 ## Q10: What is Responsive Web Design? Explain Media Queries, CSS Variables, and Mobile-First approach.
 ### Points Covered
- * **In mobile-first, do you use min-width or max-width in media queries?** In mobile-first design, we code for mobile first and use **min-width** to add styles for bigger screens.
- * **What does @media (prefers-color-scheme: dark) do?** It detects if the user's phone or computer is set to **Dark Mode**, so we can show them a dark version of our site automatically.
- * **Can JavaScript read and change CSS variables?** Yes, JavaScript can read them and change their values dynamically.
- * **What is the difference between var(--color) and var(--color, fallback)?** var(--color) just looks for that variable. var(--color, fallback) tells the browser: "If the --color variable is missing or broken, use this fallback color instead."
+ * **In mobile-first, do you use min-width or max-width in media queries?**
+   
+   In mobile-first design, we code for small screens first and use **min-width** to scale up.
+ * **What does @media (prefers-color-scheme: dark) do?**
+   
+   It detects if the user's operating system has **Dark Mode** enabled to update colors automatically.
+ * **Can JavaScript read and change CSS variables?**
+   
+   Yes, JavaScript can read and dynamically update custom properties.
+ * **What is the difference between var(--color) and var(--color, fallback)?**
+   
+   var(--color) loads that variable, while var(--color, fallback) provides a **safe backup color** if the variable is missing.
 ### Code Task
 ```css
 /* Base variables for layout styling */
@@ -301,3 +380,4 @@ body {
         padding: 40px;
     }
 }
+
