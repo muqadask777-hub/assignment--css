@@ -1,4 +1,3 @@
-
 # CSS Theory Assignment
 
 ## Q1: What is CSS and how do you add it to an HTML page?
@@ -19,16 +18,16 @@
   <br>External CSS keeps the HTML code clean. If you want to change the design of the whole website, you only change one file instead of updating every page. It also makes the website load faster.
 
 ### Code Task
-```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <title>My CSS Assignment</title>
-    <!-- 1. External link method -->
+
+    <!-- External CSS -->
     <link rel="stylesheet" href="style.css">
 
-    <!-- 2. Internal style method -->
+    <!-- Internal CSS -->
     <style>
         h1 {
             color: blue;
@@ -38,23 +37,25 @@
 </head>
 <body>
 
-    <h1>Hello! Welcome to muqaddas assignment</h1>
+    <h1>Hello! Welcome to My Assignment</h1>
 
-    <!-- 3. Inline style method -->
-    <p style="color: red; font-size: 16px;">This paragraph uses inline styling.</p>
+    <!-- Inline CSS -->
+    <p style="color: red; font-size: 16px;">
+        This paragraph uses inline styling.
+    </p>
 
 </body>
 </html>
-
-```
 ## Q2: Explain CSS Selectors with examples.
+### Comparison: Direct Child vs Descendant Selector
+| Selector Type | Syntax | Description | Target Range |
+|---|---|---|---|
+| **Direct Child** | div > p | Targets only the immediate children. | Stricter (Only 1st level down) |
+| **Descendant** | div p | Targets any matching element inside the parent, no matter how deep. | Broader (Deep nested elements too) |
 ### Points Covered
  * **Which selector has the highest specificity — class or ID?**
    
    The **ID selector** has higher specificity than a class selector. If you apply both to the same element, the ID style wins.
- * **How do you target an element that is a direct child vs any descendant?**
-   
-   For a direct child, we use the **>** sign (like div > p). For any descendant, we just leave a **space** (like div p).
  * **Can you use the same class on multiple elements?**
    
    Yes, you can use the same class name on as many elements as you want.
@@ -150,6 +151,12 @@ section > p {
 
 ```
 ## Q5: What are CSS Units? Explain px, %, rem, em, vh, and vw.
+### Comparison: px vs rem for Accessibility
+
+| Unit | Nature | Accessibility Behavior | Best Used For |
+|---|---|---|---|
+| **px** | Absolute / Fixed | Fixed unit that does not depend on the root font size. Browser zoom still affects it. | Borders, icons, precise spacing |
+| **rem** | Relative to Root (<html>) | Scales according to the root font size and improves accessibility. | Font sizes, responsive layouts |
 ### Points Covered
  * **What is 1rem equal to by default?**
    
@@ -160,9 +167,6 @@ section > p {
  * **vh stands for what?**
    
    vh stands for **Viewport Height** (1vh means 1% of the screen's height).
- * **Why is rem better than px for font-size in accessibility?**
-   
-   If a user changes their browser text size due to weak eyesight, rem will automatically scale. Fixed px stays the same and breaks layout accessibility.
 ### Code Task
 ```css
 .hero-section {
@@ -186,8 +190,8 @@ section > p {
    
    The rule written **at the bottom (last)** in the CSS file will win.
  * **What does !important override?**
-   
-   It overrides everything—inline styles, IDs, classes, and tags.
+
+  `!important` overrides normal CSS specificity rules. If multiple rules use `!important`, then specificity and source order are used to decide which rule wins.
 ### Code Task
 ```css
 /* HTML: <p id='intro' class='text'>Hello</p> */
@@ -209,10 +213,15 @@ p {
 
 ```
 ## Q7: Explain CSS Flexbox. How does it differ from block layout?
+### Comparison: justify-content vs align-items
+
+| Property | Purpose | Axis Controlled |
+|---|---|---|
+| **justify-content** | Aligns and distributes items along the main axis. | Main Axis |
+| **align-items** | Aligns items along the cross axis. | Cross Axis |
+
+> **Note:** With the default `flex-direction: row`, the main axis is horizontal and the cross axis is vertical.
 ### Points Covered
- * **What is the difference between justify-content and align-items?**
-   
-   justify-content moves items horizontally, while align-items moves items vertically inside a flex row.
  * **What does flex: 1 do to an item?**
    
    It tells the item to grow and take up all the leftover empty space inside the container.
