@@ -18,6 +18,7 @@
   <br>External CSS keeps the HTML code clean. If you want to change the design of the whole website, you only change one file instead of updating every page. It also makes the website load faster.
 
 ### Code Task
+html
 <!DOCTYPE html>
 <html lang="en">
 <head>
