@@ -18,7 +18,9 @@
   <br>External CSS keeps the HTML code clean. If you want to change the design of the whole website, you only change one file instead of updating every page. It also makes the website load faster.
 
 ### Code Task
-html
+### Code Task
+
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -47,6 +49,7 @@ html
 
 </body>
 </html>
+```
 ## Q2: Explain CSS Selectors with examples.
 ### Comparison: Direct Child vs Descendant Selector
 | Selector Type | Syntax | Description | Target Range |
